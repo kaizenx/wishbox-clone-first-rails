@@ -1,0 +1,29 @@
+<div class="item-listing-inner-container">
+  <p class="large-text"><%= product.Title %></p>
+        
+  <div class="item-listing-img">  
+    <%=
+    link_to image_tag( product.ImageURL, :border => 0, :class=>"item-listing-title"), {:controller => "products", :action => "item", :id => product.friendly_id }
+    %>
+  </div>
+  <div class="row">
+      <div class="col-md-7 nopadding-left">
+       <div class="item-listing-price">
+        <p class="item-listing-old-price"> 
+          <span class="item-listing-current-price-currency medium-text"><%= product.Currency %>
+<%= number_to_currency(product.BasePrice, :unit=> "") %></span>
+        </p>
+        <p class="item-listing-current-price">
+          <span class="item-listing-current-price-currency large-text"><%= product.Currency %></span>
+          <span class="item-listing-current-price-bold large-text"><%= number_to_currency(product.Price, :unit => "") %></span>
+        </p>
+       </div>
+      </div>
+      <div class="col-md-5 nopadding-left-right relpos">
+     <div class="bottom-aligned">
+       <%= link_to "Add to cart!", {:controller => "products", :action => "shop", :id => product.id}, :remote => true, :class => "btn btn-block btn-primary", :target => '_blank', :id => 'button-shop' %>
+          
+     </div>
+      </div>
+  </div>
+</div>

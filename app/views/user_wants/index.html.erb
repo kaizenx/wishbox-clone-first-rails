@@ -1,0 +1,29 @@
+<h1>Listing user_wants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Productid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_wants.each do |user_want| %>
+      <tr>
+        <td><%= user_want.UserId %></td>
+        <td><%= user_want.ProductId %></td>
+        <td><%= link_to 'Show', user_want %></td>
+        <td><%= link_to 'Edit', edit_user_want_path(user_want) %></td>
+        <td><%= link_to 'Destroy', user_want, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User want', new_user_want_path %>

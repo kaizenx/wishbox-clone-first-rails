@@ -1,0 +1,128 @@
+// Place all the styles related to the Visitors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.cover{ 
+	/*background-image: url(<%= asset_path 'background.jpg' %>);*/
+  	
+	max-height:100%;
+	height: auto;
+	position:relative;
+
+}
+
+
+.trip-listing{
+
+	.trip-header{
+		font-size:1.5em;
+		font-weight:bold;
+		text-transform:uppercase;
+	}
+	.trip-text{
+		font-size:1.5em;
+		text-transform:uppercase;
+	}
+}
+.lead{
+	padding:2em 2em;
+	height: 350px;
+}
+
+.form-width-shorter{
+	width:700px;
+}
+.gray-bg{
+	background-color: #777777;
+	border-color:#777777;
+}
+.transparent{
+	// filter:alpha(opacity=60);
+ //    opacity:0.6;
+ 	background:rgba(119, 119, 119, 0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#997777777,endColorstr=#  997777777);
+    
+}
+.square-edges{
+	border-radius:0;
+}
+
+.autoModal.modal .modal-body{
+    max-height: 100%;
+}
+
+#mainNav li{
+	margin-left: 0;
+    padding-left: 0;
+	height:50px;
+	list-style:none;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+#mainNav{
+	margin-left: 0;
+    padding-left: 0;
+}
+
+.whitetext{
+	color:#fff;
+}
+.transparent2{
+	// filter:alpha(opacity=60);
+ //    opacity:0.6;
+ 	background:rgba(000, 000, 000, 0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#997777777,endColorstr=#  997777777);
+    
+}
+.blackbg{
+	background-color:#000000;
+}
+
+#gallery li {
+	display: inline;
+	margin-right: 3px;
+}
+#gallery #main-img {
+	background: url(images/bg_img.png) no-repeat 0 0;
+	padding: 26px;
+}
+.vcontainer {
+   min-height: 10em;
+   display: table-cell;
+   vertical-align: middle;
+}
+
+.modal-dialog-center {
+    margin-top: 10%;
+}
+
+.carousel-col{
+	background-color:#ececec;
+	color:#000;
+	height:154px;
+	margin-left:5px;
+	margin-right:5px;
+	padding-bottom:10px;
+	min-height:220px;
+}
+.carousel-col img{
+	min-width:180px;
+}
+
+.padding-left{
+	padding-left:25px;
+}
+
+.carousel-text{
+	padding-top:10px;
+	padding-bottom:10px
+}
+
+.padding-top-large{
+	padding-top:4em;
+}
+
+.overflow-control{
+	overflow:visible;
+	white-space:nowrap;
+}

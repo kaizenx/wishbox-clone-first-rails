@@ -1,0 +1,33 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+<%= simple_form_for(@feed) do |f| %>
+
+  <div class="form-inputs">
+    
+    <%= f.input :UserId, :input_html => { :value => current_user.id, :readonly => true} %>
+    <%= f.input :IsAdmin %>
+    <%= f.input :IsSponsor %>
+    <%= f.input :restricted %>
+    <% if @feed.new_record? %>  
+       <%= f.collection_select :ImageUrl, Gallery.all, :image_url, :name %>
+    <% else %>
+      <%= f.collection_select :ImageUrl, Gallery.all, :image_url, :name %>                     
+      <!--<%= f.select( :ImageUrl, Gallery.where(feeid: f.object.id).collect {|p| [ p.name, p.image_url ] }, prompt:true ) %>-->
+    <% end %>
+
+    
+    <%= f.input :Title %>
+    <%= f.input :Subtitle %>
+    <%= f.input :IsPublished %>
+    <%= f.input :slug %>
+    <%= f.input :Blurb %>  
+    <%= f.label :Description %><br/>
+    <%= f.text_area :Description, size: '50x10', class: 'tinymce'  %>
+    <%= f.input :lat %>
+    <%= f.input :lng %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

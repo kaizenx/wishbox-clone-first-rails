@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Price: 9.99
+  DayOfYear: 1
+
+two:
+  Price: 9.99
+  DayOfYear: 1

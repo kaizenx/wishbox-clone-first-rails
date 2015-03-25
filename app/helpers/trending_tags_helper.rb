@@ -1,0 +1,2 @@
+module TrendingTagsHelper
+end

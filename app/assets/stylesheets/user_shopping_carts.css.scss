@@ -1,0 +1,78 @@
+// Place all the styles related to the UserShoppingCarts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$pink: #ED008C;
+
+.shopping-cart-img{
+	width:86px;
+	height:69px;
+}
+
+.cart-item{
+	position:relative;
+	min-height:73px;
+}
+
+.padding-img-padding{
+	padding:2px 2px;
+}
+
+.cart-item-price{
+	pointer-events:none;
+	padding:2px 2px;
+	display: inline-block;
+}
+
+.outline{
+	outline:#C8C8CA solid thin;
+}
+
+.valign{
+	text-align: bottom;
+	bottom:0px;
+}
+.green-select{
+	background-color: #8ABA69;
+	border-radius: 2px;
+	border-color: #8ABA69;
+	height:27px;
+	min-width:50px;
+}
+
+.form-height{
+	min-height: 45px;
+	position: relative;
+}
+
+.form-elements{
+	text-align: right;
+}
+ul#display-inline-block-example{
+	width:100%;
+
+}
+ul#display-inline-block-example,
+ul#display-inline-block-example li {
+	/* Setting a common base */
+	margin: 0;
+	padding: 0;
+}
+
+ul#display-inline-block-example li {
+	display: inline-block;
+	vertical-align: bottom;
+}
+.hidden-column{
+	width: 75%;
+	height: 47px; 
+}
+.quantity-column{
+	width: 17%;
+	height: 100%; 
+	
+}
+
+.price-column{
+	width: 7%;
+	height: 100%; 
+}

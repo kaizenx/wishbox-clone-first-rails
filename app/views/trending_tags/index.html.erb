@@ -1,0 +1,27 @@
+<h1>Listing trending_tags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Tags</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @trending_tags.each do |trending_tag| %>
+      <tr>
+        <td><%= trending_tag.Tags %></td>
+        <td><%= link_to 'Show', trending_tag %></td>
+        <td><%= link_to 'Edit', edit_trending_tag_path(trending_tag) %></td>
+        <td><%= link_to 'Destroy', trending_tag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Trending tag', new_trending_tag_path %>

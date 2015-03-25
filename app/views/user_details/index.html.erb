@@ -1,0 +1,49 @@
+<h1>Listing user_details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>Userid</th>
+      <th>Streetaddr</th>
+      <th>State</th>
+      <th>City</th>
+      <th>Zipcode</th>
+      <th>Country</th>
+      <th>Income</th>
+      <th>Gender</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_details.each do |user_detail| %>
+      <tr>
+        <td><%= user_detail.FirstName %></td>
+        <td><%= user_detail.LastName %></td>
+        <td><%= user_detail.Age %></td>
+        <td><%= user_detail.Email %></td>
+        <td><%= user_detail.UserId %></td>
+        <td><%= user_detail.StreetAddr %></td>
+        <td><%= user_detail.State %></td>
+        <td><%= user_detail.City %></td>
+        <td><%= user_detail.Zipcode %></td>
+        <td><%= user_detail.Country %></td>
+        <td><%= user_detail.Income %></td>
+        <td><%= user_detail.Gender %></td>
+        <td><%= link_to 'Show', user_detail %></td>
+        <td><%= link_to 'Edit', edit_user_detail_path(user_detail) %></td>
+        <td><%= link_to 'Destroy', user_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User detail', new_user_detail_path %>

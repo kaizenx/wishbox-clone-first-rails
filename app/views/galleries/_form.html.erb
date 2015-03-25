@@ -1,0 +1,19 @@
+<%= simple_form_for(@gallery) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.label :feeid %>
+    <%= f.collection_select( :feeid, Feed.all, :id, :Title, prompt:true ) %>
+    <%= f.label :productid %>
+    <%= f.collection_select( :productid, Product.all, :id, :Title, prompt:true ) %>
+    <%= f.file_field :image %>
+    <%= f.label :remote_image_url, "or image URL" %><br />
+    <%= f.text_field :remote_image_url %>
+    
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

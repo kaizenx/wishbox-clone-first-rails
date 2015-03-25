@@ -1,0 +1,1 @@
+json.extract! @product, :id, :Title, :SubTitle, :ImageURL, :TargetURL, :Wants, :CreatedByUserId, :Currency, :Price, :IsPublished, :MerchantId, :SKUId, :Category, :StartDate, :EndDate, :DestinationId, :Description, :Highlights, :Condition, :BasePrice, :DiscountPercentage, :created_at, :updated_at, :slug

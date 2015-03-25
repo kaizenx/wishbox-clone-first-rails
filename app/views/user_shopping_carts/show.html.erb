@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @user_shopping_cart.userid %>
+</p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @user_shopping_cart.productid %>
+</p>
+
+<p>
+  <strong>Isshow:</strong>
+  <%= @user_shopping_cart.isshow %>
+</p>
+
+<p>
+  <strong>IsBought:</strong>
+  <%= @user_shopping_cart.IsBought %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @user_shopping_cart.Title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @user_shopping_cart.Price %>
+</p>
+
+<p>
+  <strong>Voucher code:</strong>
+  <%= @user_shopping_cart.VoucherCode %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_shopping_cart_path(@user_shopping_cart) %> |
+<%= link_to 'Back', user_shopping_carts_path %>

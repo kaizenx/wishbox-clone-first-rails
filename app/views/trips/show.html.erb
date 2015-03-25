@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @user_in_feed.userid %>
+</p>
+
+<p>
+  <strong>Feedid:</strong>
+  <%= @user_in_feed.feedid %>
+</p>
+
+<%= link_to 'Edit', edit_user_in_feed_path(@user_in_feed) %> |
+<%= link_to 'Back', user_in_feeds_path %>

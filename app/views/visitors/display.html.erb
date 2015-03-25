@@ -1,0 +1,66 @@
+
+<h1></h1>
+<div id="copy">
+  <!-- <p>Masonry integrates well with auto-paging scripts like <a href="http://infinite-scroll.com/">Infinite Scroll</a> by <a href="http://paulirish.com">Paul Irish</a>. Using the <a href="../docs/methods.html#appended"><code>appended</code> method</a>, Masonry will position only the newly appended elements, and skip over all the previous elements that are already in their proper position, thus saving precious milliseconds of page load time. This demo also makes use of the <code>isAnimatedFromBottom</code> flag.</p> -->
+</div>
+
+<h1>
+<%= @default_product_list %>
+</h1>
+<div id="container" class="transitions-enabled infinite-scroll clearfix">
+<% @default_products.each do |t, a| %>
+<div class="box col5">
+  <h2><%= t.Title %></h2>
+ 
+  <button id="imagebutton" 
+         imageurl=<%= t.ImageURL %> 
+         targeturl=<%= t.id %> 
+         class="btn btn-lg" 
+         data-toggle="modal" 
+         data-target="#myModal" 
+         imagetitle = <%= t.Title %> 
+         > 
+
+ 	<img src=<%= t.ImageURL %> alt=<%= t.SubTitle %> />
+    
+  
+</button>
+
+
+
+</div>
+<% end %>
+  <!-- <div class="box col3">
+    <p>
+      <a href="http://www.flickr.com/photos/nemoorange/3318887645/" title="Clarendon Metro by nemoorange, on Flickr"><img src="http://farm4.static.flickr.com/3619/3318887645_1f33364338.jpg" alt="Clarendon Metro"  /></a>
+    </p>
+  </div>
+  -->
+
+
+</div> <!-- #container -->
+
+<nav id="page-nav">
+  <a href="../pages/2.html"></a>
+</nav>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <img id="product-image" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button id="button-danger" type="button" class="btn btn-danger">Share</button>
+        <button id="button-want" type="button" class="btn btn-primary">Want</button>
+        <%= link_to "Shop", {:controller => "products", :action => "shop"}, :class => "btn btn-warning", :target => '_blank', :id => 'button-shop' %>
+        <!-- <button id="button-shop" type="button" class="btn btn-warning" targeturl="#">Shop</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

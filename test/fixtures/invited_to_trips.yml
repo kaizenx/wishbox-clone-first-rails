@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  InviterId: 1
+  InviteeId: 1
+  NonMemberInviteeId: MyString
+  TripId: 1
+
+two:
+  InviterId: 1
+  InviteeId: 1
+  NonMemberInviteeId: MyString
+  TripId: 1

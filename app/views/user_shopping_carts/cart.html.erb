@@ -1,0 +1,12 @@
+<p class="large-text">Order Summary</p>
+
+<!-- <button type="button" class="btn btn-lg btn-primary">Clear shopping cart</button> -->
+<!--<%= link_to "Clear shopping cart", {:controller => "user_shopping_carts", :action => "clearcart"}, :class => "btn btn-lg btn-primary", :id => 'button-clear-cart' %>-->
+
+<% @products_list.each_with_index do |t, index| %>
+  <%= render partial: 'cartitems', locals: { t: t, index: index } %> 
+<% end %>
+
+<div class="padding-top">
+<%= link_to "pay now!", {:controller => "user_shopping_carts", :action => "buy"}, :class => "btn btn-block btn-primary large-text",  :id => 'button-buy-cart' %>
+</div>

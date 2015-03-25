@@ -1,0 +1,2 @@
+module FeedViewHelper
+end

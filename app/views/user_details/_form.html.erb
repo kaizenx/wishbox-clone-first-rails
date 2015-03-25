@@ -1,0 +1,22 @@
+<%= simple_form_for(@user_detail) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :FirstName %>
+    <%= f.input :LastName %>
+    <%= f.input :Age %>
+    <%= f.input :Email %>
+    <%= f.input :UserId %>
+    <%= f.input :StreetAddr %>
+    <%= f.input :State %>
+    <%= f.input :City %>
+    <%= f.input :Zipcode %>
+    <%= f.input :Country %>
+    <%= f.input :Income %>
+    <%= f.input :Gender %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

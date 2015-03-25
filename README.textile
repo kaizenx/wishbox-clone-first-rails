@@ -1,0 +1,27 @@
+h1. Rails Bootstrap
+
+This application uses rails bootstrap for layout purposes
+
+
+h2. Diagnostics
+
+This application was built with recipes that are known to work together.
+
+This application was built with preferences that are NOT known to work together.
+
+
+h2. Contributing
+
+
+If you add functionality to this application, create an alternative implementation, or build an application that is similar, please contact me and I'll add a note to the README so that others can find your work.
+
+h2. Credits
+
+Wu Tzu Chjeh -- Solution Architect, Programmer
+
+h2. License
+
+Copyright (C) Wu Tzu Chjeh - All Rights Reserved
+Unauthorized copying of this file, via any medium is strictly prohibited
+Proprietary and confidential
+Written by Wu Tzu Chjeh <tzuchjeh@gmail.com>, January 2014

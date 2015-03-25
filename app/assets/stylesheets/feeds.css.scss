@@ -1,0 +1,75 @@
+// Place all the styles related to the Feeds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.listing-section{
+  
+  margin:3em 0;
+  margin-left:1em;
+  margin-right:1em;
+  border-bottom: 1px solid #ececec;
+}
+.listing-text{
+  text-transform:uppercase;
+}
+
+.item-listing{
+  
+}
+
+.tourisly-background{
+  background-color:#ececec !important;
+}
+
+.item-listing-box{
+  outline:#C8C8CA solid thin;
+  
+}
+
+.item-listing-container{
+  .item-listing-inner-container{
+    margin:10px 10px;
+  }
+  .item-listing-price{
+  	text-transform:uppercase;
+	  .item-listing-old-price{
+	  	text-decoration:line-through;
+	  }
+	  .item-listing-current-price{
+	  	.item-listing-current-price-currency{
+	  		display:inline-block;
+	  	}
+	  	.item-listing-current-price-bold{
+	  		
+	  		font-weight:bold;
+	  		display:inline-block;
+	  	}
+	  }
+  }
+  .item-listing-img{
+
+      background-color:#fff;
+  }
+}
+
+.col:not(:first-child),.col:not(:last-child) {
+  padding-right:7px;
+  padding-left:7px;
+}
+.col:first-child {
+  padding-left:0px;
+  margin-left:0px;
+}
+.col:last-child {
+  padding-right:0px;
+  margin-right:0px;
+}
+.relpos{
+  position:relative;
+}
+.bottom-aligned{
+  top:21px;
+  position:absolute;
+  bottom: 0; 
+  width:100%;
+  right: 0;
+}

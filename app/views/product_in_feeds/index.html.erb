@@ -1,0 +1,31 @@
+<h1>Listing product_in_feeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Productid</th>
+      <th>Feedid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_in_feeds.each do |product_in_feed| %>
+      <tr>
+        <td><%= product_in_feed.id %></td>
+        <td><%= product_in_feed.productid %></td>
+        <td><%= product_in_feed.feedid %></td>
+        <td><%= link_to 'Show', product_in_feed %></td>
+        <td><%= link_to 'Edit', edit_product_in_feed_path(product_in_feed) %></td>
+        <td><%= link_to 'Destroy', product_in_feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product in feed', new_product_in_feed_path %>

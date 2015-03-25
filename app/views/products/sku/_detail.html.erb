@@ -1,0 +1,52 @@
+<% content_for :head do %>
+  <meta property="og:type"   content="website" /> 
+  <meta property="og:url"    content=<%= request.original_url %> /> 
+  <meta property="og:title"  content=<%= @product.Title %> /> 
+  <meta property="og:image" content = <%= @product.ImageURL %> />
+  <script type="text/javascript">
+  $("body").append('<script type="text/javascript">stLight.options({publisher: "de4d3ec8-ef22-439a-a26b-b4ee9c3591a6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "de4d3ec8-ef22-439a-a26b-b4ee9c3591a6", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "pinterest", "email", "sharethis"]}};
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>');
+  </script>
+<% end %>
+<div class="whitebg">
+  <div class="row padding-top-10px">
+    <div class="row">
+      <div class="col-md-12">
+        <p class="medium-text bold"><%= @product.Title %></p>
+        
+      </div>
+    </div>
+    <div class="row padding-top-10px">
+      <div class="col-md-4 left-panel">
+          <div id="purchase-cluster">
+             <%= render partial: 'products/sku/leftpanel', locals: { product: @product, mode: mode} %> 
+          </div>
+       </div>
+
+       <div class="col-md-8">
+        <div class="row">
+          <%= render 'products/sku/gallery' %> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="section">
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'products/sku/body1' %> 
+  </div>
+</div>
+
+
+<!-- <div class="fb-like" data-href=<%= request.original_url %>  data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div> -->
+<!-- <div class="fb-like" data-href="http://ec2-54-254-69-170.ap-southeast-1.compute.amazonaws.com:3000/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div> -->
+<!-- <div id="button-facebook-like" class="fb-like" data-href="http://ec2-54-254-69-170.ap-southeast-1.compute.amazonaws.com:3000/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div> -->
+
+
+
+

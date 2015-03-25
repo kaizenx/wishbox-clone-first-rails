@@ -1,0 +1,23 @@
+<div class="row">
+	<div id="carousel-touristly-pictures" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+			<%= render partial: 'products/sku/carousel', locals: { product: @product} %> 
+
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<%= render partial: 'products/sku/slides', locals: { product: @product} %> 
+
+		</div>
+
+		<!-- Controls -->
+		<a class="left carousel-control" href="#carousel-touristly-pictures" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carousel-touristly-pictures" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+</div>

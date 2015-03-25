@@ -1,0 +1,48 @@
+<div class="col-md-3" > 
+  <div class="whitebg">
+    <p class="small-text bold brand-wish-color">Reviews</p>
+    <%= @product.Widget1.to_s.html_safe %>
+    <p></p>
+    <p class="small-text bold brand-wish-color">Partner Information</p>
+    <strong class="x-small-text bold"><%= @product.LocationName %></strong>
+    <div class="x-small-text">
+       <%= @product.Address.html_safe %>
+    </div>
+    <p></p>
+      <%= @product.Widget2.to_s.html_safe %>
+  </div>
+</div>
+<div class="col-md-6 col">
+  <div>
+    <p class="small-text padding-left8 brand-wish-color bold uppercase"><%= @product.SubTitle %></p> 
+    <div class="padding-left8" style="text-align: justify;"><textarea class="small-text body-text" readonly><%= @product.Description %></textarea></div>
+  </div>  
+</div>
+<div class="col-md-3">
+  <div class="highlights-list">
+    <p class="small-text bold brand-wish-color capitalize">highlights</p>
+    <p class="small-text no-ident">
+      <ul>
+      <% 
+          @highlights.reject! { |e| e.empty? }.each do |e|
+            %>
+              <li><%= e %></li>
+            <%
+          end
+      %>
+      </ul>
+    </p>
+    <p class="small-text bold uppercased brand-wish-color capitalize">fine print</p>
+    <p class="small-text no-ident">
+      <ul>
+      <% 
+          @conditions.reject! { |e| e.empty? }.each do |e|
+            %>
+              <li><%= e %></li>
+            <%
+          end
+      %>
+      </ul>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+theme_advanced_toolbar_location: top
+theme_advanced_toolbar_align: left
+theme_advanced_statusbar_location: bottom
+toolbar:
+  - undo redo | fontsizeselect | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor
+theme_advanced_buttons3_add:
+  - tablecontrols
+fontsize_formats: 
+  - 0.5em 0.9em 1.4em 1.875em 2.52em 2.8em 4.9em 7em
+formats:
+  - bold : { inline: 'b'}
+content_css:
+  - /assets/override/override.css
+plugins:
+  - link 
+  - table
+  - insertdatetime
+  - contextmenu
+  - wordcount
+  - media
+  - code

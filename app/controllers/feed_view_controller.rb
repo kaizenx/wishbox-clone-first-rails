@@ -1,0 +1,2 @@
+class FeedViewController < ApplicationController
+end

@@ -1,0 +1,12 @@
+<%= simple_form_for(@product_price_list) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :Price %>
+    <%= f.input :DayOfYear %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

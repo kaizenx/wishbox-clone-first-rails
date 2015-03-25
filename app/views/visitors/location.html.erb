@@ -1,0 +1,133 @@
+<% content_for :head do %>
+    <script type="text/javascript">
+    jQuery(function($){
+     
+        //all jQuery code which uses $ needs to be inside here
+      $('#location-date-container input').datepicker(
+      {
+        format: 'dd-mm-yyyy',
+        autoclose : true
+      });
+    });
+
+    </script>
+<% end %>
+
+
+
+<%= form_tag({controller: "feeds", action: "listing", id: @friendlyid }, method: "post", role:"form", id: "location-submit") do %>
+<div class="row text-center">
+  <div class="padding10">
+    <div class="center-block">
+      <span class="country">
+            <a href="<%= root_path %>"><span class="brand-wish"><%= @title%>,</span><span class="brand-able"><%= @subtitle%></span></a>
+      </span>
+    </div>
+    <span class="headline">Just 3 steps to your wishable holiday</span>
+  </div>
+</div>
+
+<div class="row">
+  <div class="top-half">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <div class="center-block">
+          <span class="number-header">1</span>
+          <h2>From</h2>
+          <div id="location-date-container">
+            <div class="form-group">
+              <label for="startdate" class="col-sm-2 control-label">From</label>
+              <div class="col-sm-10">
+                <%= text_field_tag 'startdate', nil, class:"form-control", :required => true  %>
+              </div>
+            </div>
+            
+          </div>
+          <!--<%=
+            select_tag "destinations", options_from_collection_for_select(@destinations, "id", "Name"), class:"form-control", :required => true 
+          %>-->
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="center-block">
+          <span class="number-header">2</span>
+          <h2>To</h2>
+          <div class="form-horizontal">
+            
+            <div id="location-date-container">
+              <div class="form-group">
+                <label for="enddate" class="col-sm-2 control-label">To</label>
+                <div class="col-sm-10">
+                  <%= text_field_tag 'enddate', nil, class:"form-control",:required => true  %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="center-block">
+          <span class="number-header">3</span>
+          <h2>Enjoy your trip</h2>
+          <%= submit_tag "create your trip", class: "btn btn-primary btn-lg", id: 'button-go-trip' %>
+        </div>
+      </div>
+    </div>
+    
+   
+  </div>
+</div>
+
+<div class="row padding-bottom">
+  <div class="col-md-6 nopadding">
+
+      <div class="call-to-action nopadding-top">
+            <div class="pink-call nopadding-top">Discover</div><br>
+            <div class="small-text nopadding-top"><%= @blurb%></div>
+      </div>
+      <div class="destination-desc">
+        <%= @description.html_safe %>
+      </div>
+      
+
+  </div>
+  <div class="col-md-6 nopadding">
+      <%= 
+      image_tag( @imglink, :border => 0, :class => "img_preview" )
+      %>
+  </div>
+</div>
+<div class="row padding-top top-border">
+  <div class="call-to-action">
+        <span class="pink-call">Amazing</span>
+        <span class="subtitle"> offers await</span>
+  </div>
+  <div>
+    <% 
+    if not @products.nil?
+    @products.each do |product, a| %>
+    <div class="col-md-3 nopadding-left">
+      <p><%= product.Title %></p>
+      <%=
+
+      image_tag( product.ImageURL, :border => 0 )
+
+      %>
+    </div>
+    <% end 
+
+    end
+    %>
+  </div>
+</div>
+<% end %>
+
+
+
+
+
+
+
+  
+
+

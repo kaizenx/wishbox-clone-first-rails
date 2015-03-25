@@ -1,0 +1,15 @@
+<%= simple_form_for(@user_detail) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :IsReceiveWeekly %>
+    <%= f.input :IsReceiveTripUpdate %>
+    <%= f.input :IsReceiveTripUserUpdate %>
+    <%= f.label(:Currency ) %>
+    <%= f.select(:Currency, Money::Currency.table,  :class => "styled" ) %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,97 @@
+<% content_for :head do %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFRmH4VBRjOws8qHkWPL6vIKEb_LHZsOk&sensor=true"></script>
+    <script type="text/javascript">
+
+
+      var map;
+
+    function initialize() {
+      var mapOptions = {
+        zoom: 3
+      };
+      map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+
+      // Try HTML5 geolocation
+      if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = new google.maps.LatLng(position.coords.latitude,
+                                           position.coords.longitude);
+
+          // var infowindow = new google.maps.InfoWindow({
+          //   map: map,
+          //   position: pos,
+          //   content: 'You are here'
+          // });
+          var marker = new google.maps.Marker({
+            map: map,
+            position: pos
+          });
+          map.setCenter(pos);
+        }, function() {
+          handleNoGeolocation(true);
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleNoGeolocation(false);
+      }
+    }
+
+    function handleNoGeolocation(errorFlag) {
+      if (errorFlag) {
+        var content = 'Error: The Geolocation service failed.';
+      } else {
+        var content = 'Error: Your browser doesn\'t support geolocation.';
+      }
+
+      var options = {
+        map: map,
+        position: new google.maps.LatLng(60, 105),
+        content: content
+      };
+
+      var infowindow = new google.maps.InfoWindow(options);
+      map.setCenter(options.position);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+
+    </script>
+<% end %>
+
+<div class="container">
+  <!-- <div id="map-canvas"></div> -->
+  <div class="row listing-section nopadding-left-right">
+    <div class="center-block">
+      <div class="col-md-12 text-center ">
+          <span class="listing-text"><%=@username%>'s Trips</span>
+      </div>
+    </div>
+  </div>
+  <% i = 0
+  @trip_array.each do |t, a| %>
+  <%
+    make_row = i % 2
+    if make_row == 0
+  %>
+
+  <div class="row padding-top10 nopadding-left-right"> <!-- start row -->
+    <%= render partial: 'mytrips', locals: { t: t, a: a } %> 
+  <% else %>
+    <%= render partial: 'mytrips', locals: { t: t, a: a } %> 
+
+  <% end %>
+
+  <% 
+
+  if make_row != 0 or i == @trip_array.count - 1 %>
+    </div> <!-- end row -->
+  <% end %>
+
+  <%
+  i = i + 1
+  %>
+
+  <% end %>
+</div>

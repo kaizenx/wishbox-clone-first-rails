@@ -1,0 +1,29 @@
+<%= simple_form_for(@merchant) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :Name %>
+     <div class="control-group string optional merchant_Name">
+        <label class="string optional control-label" for="merchant_Title">Title</label>
+          <div class="controls">
+            <%= f.select( :Title, options_for_select([['Mr', 'Mr'], ['Mrs', 'Mrs'], ['Ms', 'Ms'] ]) , {}, { :class => 'my_style_class' })  %>
+          </div>
+    </div>
+    <%= f.input :CompanyName %>
+    <%= f.input :Address %>
+    <div class="control-group string optional merchant_Name">
+        <label class="string optional control-label" for="merchant_Country">Country</label>
+          <div class="controls">
+    <%= f.country_select(:Country, [ "Malaysia", "Singapore", "Thailand" ]) %>
+    </div>
+    </div>
+    <%= f.input :ContactPhone %>
+    <%= f.input :MobilePhone %>
+    <%= f.input :Email %>
+    <%= f.input :Password %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

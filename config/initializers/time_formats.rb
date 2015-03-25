@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:trip] = '%d %B %Y'

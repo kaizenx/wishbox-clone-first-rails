@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Inviterid:</strong>
+  <%= @invited_to_trip.InviterId %>
+</p>
+
+<p>
+  <strong>Inviteeid:</strong>
+  <%= @invited_to_trip.InviteeId %>
+</p>
+
+<p>
+  <strong>Nonmemberinviteeid:</strong>
+  <%= @invited_to_trip.NonMemberInviteeId %>
+</p>
+
+<p>
+  <strong>Tripid:</strong>
+  <%= @invited_to_trip.TripId %>
+</p>
+
+<%= link_to 'Edit', edit_invited_to_trip_path(@invited_to_trip) %> |
+<%= link_to 'Back', invited_to_trips_path %>

@@ -1,0 +1,21 @@
+defaults: &defaults
+  twitter:
+    api_key: "KEY"
+    api_secret: "SECRET"
+  facebook:
+    api_key: "225642087623549"
+    api_secret: "85a0c08000573549b60f23aa4ffb7229"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  twitter:
+    api_key: "KEY2"
+    api_secret: "SECRET2"
+  facebook:
+    api_key: "565649096864957"
+    api_secret: "ad0ecedfc3b84793aa96b29a1f334a39"

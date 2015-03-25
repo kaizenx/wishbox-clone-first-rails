@@ -1,0 +1,71 @@
+<%= js add_gritter(@notice, :image => :success, :title => "Success!", :sticky => true) %>
+<h1 class="pink-call">
+	<span class="brand-wish-color">Contact</span><span class="brand-able-color"> Us</span>
+</h1>
+<div class="row">
+	<div class="col-md-6">
+		
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7094815355936!2d101.66651000000003!3d3.1709970000000047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc485e05b0eee5%3A0x3dfac552f3cd566d!2sSolaris+Dutamas!5e0!3m2!1sen!2s!4v1396058095997" width="400" height="300" frameborder="0" style="border:0"></iframe>
+	</div>
+	<div class="col-md-6">
+			<p class="large-text brand-wish">
+				Office Address:
+
+
+
+
+			</p>
+			<p>
+<pre class="noborder medium-text nopadding-left">
+Touristly
+C3-5-3A,
+Solaris Dutamas,
+Jalan Dutamas 1,
+50480 Kuala Lumpur.</pre>
+			</p>
+			<p class="large-text brand-wish">
+				Email: 
+			</p>
+			<p>
+info@touritsly.com 
+			</p>
+	</div>
+</div>
+<div class="listing-section"></div>
+<div class="row">
+	<p>HAVE A QUESTION? EMAIL US!</p>
+	
+	<%= form_tag({controller: "contact_us", action: "contact" }, id: "contact_us_form", method: "post", class:"form-horizontal", role:"form") do %>
+	<div class="form-group">
+	   <label class="col-sm-2 control-label" for="ContactUsFirstName">First Name</label>
+	   <div class="col-sm-10">
+	   	<%= text_field_tag 'ContactUsFirstName', nil, :type => "text", :class=>"form-control", :required => true , :placeholder=>"Bob" %>
+	   </div>
+	</div>
+	<div class="form-group">
+	   <label class="col-sm-2 control-label" for="ContactUsLastName">Last Name</label>
+	   <div class="col-sm-10">
+	   	<%= text_field_tag 'ContactUsLastName', nil, :type => "text", :class=>"form-control", :required => true , :placeholder=>"Smith" %>
+	   </div>
+	</div>
+	<div class="form-group">
+	   <label class="col-sm-2 control-label" for="ContactUsEmail">Email</label>
+	   <div class="col-sm-10">
+	   	<%= text_field_tag 'ContactUsEmail', nil, :type => "email", :class=>"form-control", :required => true , :placeholder=>"bobsmith@gmail.com" %>
+	   </div>
+	</div>
+	
+	<div class="form-group">
+	   <label for="ContactUsComments" class="col-sm-2 control-label">Questions/Comments</label>
+	   <div class="col-sm-10">
+	   	<%= text_area_tag 'ContactUsComments', nil, :rows => "3", :class=>"form-control", :required => true , :placeholder=>"Comments"  %>
+	   </div>
+	</div>
+	<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </div>
+  </div>
+  <% end %>
+</div>
+	

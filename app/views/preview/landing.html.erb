@@ -1,0 +1,49 @@
+<% content_for :head do %>
+    <meta property="og:type"   content="website" /> 
+    <meta property="og:url"    content="<%= request.original_url %>" /> 
+    <meta property="og:title"  content="Couplon Monster" /> 
+    <meta property="og:image" content = "<%= @imagelink %>" />
+    <style type="text/css">
+        .container{
+        	background-color:transparent !important;
+        	max-width: 1024px !important;
+        	margin: 0 auto;
+        	width: 100%;
+        }
+        body{
+        	background: url('/assets/girl.jpg') no-repeat center center;
+        	background-repeat: no-repeat;
+        	background-size:1920px auto;
+        	margin-top:100px;
+        }
+        
+        #wrap {
+          background:none !important;
+          min-height: 100%;
+          height: auto;
+          /* Negative indent footer by its height */
+          margin: 0 auto -60px;
+          /* Pad bottom by footer height */
+          padding: 0 0 60px;
+        }
+        .footer-height{
+          height:20px !important;
+        }
+    </style>
+   
+<% end %>
+<div class="logo-container">
+
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<%= image_tag( asset_path('touristly_logo_invertwhite.png'), :border => 0, :class=>"logo-small") %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12 pull-right text-right">
+		<span class="x-large-text whitetext">Coming Soon</span>
+	</div>
+</div>
+</div>
+
+

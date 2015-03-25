@@ -1,0 +1,33 @@
+<h1>Listing invited_to_trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Inviterid</th>
+      <th>Inviteeid</th>
+      <th>Nonmemberinviteeid</th>
+      <th>Tripid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invited_to_trips.each do |invited_to_trip| %>
+      <tr>
+        <td><%= invited_to_trip.InviterId %></td>
+        <td><%= invited_to_trip.InviteeId %></td>
+        <td><%= invited_to_trip.NonMemberInviteeId %></td>
+        <td><%= invited_to_trip.TripId %></td>
+        <td><%= link_to 'Show', invited_to_trip %></td>
+        <td><%= link_to 'Edit', edit_invited_to_trip_path(invited_to_trip) %></td>
+        <td><%= link_to 'Destroy', invited_to_trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invited to trip', new_invited_to_trip_path %>

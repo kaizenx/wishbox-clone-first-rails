@@ -1,0 +1,39 @@
+<h1>Listing user_shopping_carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Userid</th>
+      <th>Productid</th>
+      <th>Isshow</th>
+      <th>IsBought</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>VoucherCode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_shopping_carts.each do |user_shopping_cart| %>
+      <tr>
+        <td><%= user_shopping_cart.userid %></td>
+        <td><%= user_shopping_cart.productid %></td>
+        <td><%= user_shopping_cart.isshow %></td>
+        <td><%= user_shopping_cart.IsBought %></td>
+        <td><%= user_shopping_cart.Title %></td>
+        <td><%= user_shopping_cart.Price %></td>
+        <td><%= user_shopping_cart.VoucherCode %></td>
+        <td><%= link_to 'Show', user_shopping_cart %></td>
+        <td><%= link_to 'Edit', edit_user_shopping_cart_path(user_shopping_cart) %></td>
+        <td><%= link_to 'Destroy', user_shopping_cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User shopping cart', new_user_shopping_cart_path %>

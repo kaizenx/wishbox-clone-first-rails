@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @trending_tag.Tags %>
+</p>
+
+<%= link_to 'Edit', edit_trending_tag_path(@trending_tag) %> |
+<%= link_to 'Back', trending_tags_path %>

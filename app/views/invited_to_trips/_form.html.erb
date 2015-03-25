@@ -1,0 +1,14 @@
+<%= simple_form_for(@invited_to_trip) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :InviterId %>
+    <%= f.input :InviteeId %>
+    <%= f.input :NonMemberInviteeId %>
+    <%= f.input :TripId %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

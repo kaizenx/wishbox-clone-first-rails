@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productid:</strong>
+  <%= @product_in_feed.productid %>
+</p>
+
+<p>
+  <strong>Feedid:</strong>
+  <%= @product_in_feed.feedid %>
+</p>
+
+<%= link_to 'Edit', edit_product_in_feed_path(@product_in_feed) %> |
+<%= link_to 'Back', product_in_feeds_path %>

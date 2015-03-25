@@ -1,0 +1,26 @@
+<%
+size = @images_from_gallery.count - 1
+if @images_from_gallery.count > 0
+  @count = 0
+  @images_from_gallery.each do |e|
+    if @count == 0
+        %>
+            <div class="item active">
+              <%= image_tag(e.image, :border => 0, class: "item-image", id: 'product-main-img') %>
+
+	             
+	         </div>
+	           
+        <%
+    else
+        %>
+         	<div class="item">
+              <%= image_tag(e.image, :border => 0, class: "item-image", id: 'product-main-img') %>
+            </div>
+        <%
+    end
+    @count = @count + 1
+  end
+end
+%>
+    

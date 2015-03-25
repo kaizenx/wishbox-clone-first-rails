@@ -1,0 +1,111 @@
+<% content_for :head do %>
+    <script type="text/javascript">
+    $(function () {
+        var timestamp = <%= @product.EndDate.to_i %>
+        var liftoffTime = new Date(timestamp*1000);
+        //liftoffTime = new Date(liftoffTime.getFullYear() + 1, 1 - 1, 26);
+        $('#countdown').countdown({
+          labels: ['Years', 'Months', 'Weeks', 'Days', 'Hours', 'Minutes', 'Seconds'], 
+          until: liftoffTime,
+          layout: '{dn} days {hnn}{sep}{mnn}{sep}{snn} {desc}', 
+          description: '',
+          padZeroes: true
+        });
+
+    });    
+    </script>
+<% end %>
+<div class="row">
+  <div class="row">
+    <div class="buy">
+      <p class="x-small-text oblique"><%= @product.Blurb %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="buy">
+      <div class="col-md-12 col-sm-12 col-xs-12 price nopadding-left">
+        <div class="price">
+          <span class="large-text uppercase "><%= @product.Currency %> <%= @product.Price %></span>&nbsp;
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="add-to-cart">
+          <%= render partial: 'products/sku/buttons', locals: { product: @product, mode: mode} %> 
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="deal-discount">
+      <table>
+        <tbody>
+          <tr>
+            <th>Value</th>
+            <th>Discount</th>
+            <th>You Save</th>
+          </tr>
+          <tr id="discount-data">
+            <td id="discount-value"><%= @product.Currency %><%= @product.BasePrice %></td>
+            <td id="discount-percent"><%= @product.DiscountPercentage.to_s %>%</td>
+            <td id="discount-you-save"><%= @product.Currency %><%= @savings %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="buy">
+      <p class="small-text oblique"><a href="#" class="btn btn-primary btn-block btn-lg2 btn-buy-big"><span class="glyphicon glyphicon-share"></span>Share with friend</a></p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="valid">
+      <p class="uppercase">exclusive!</p>
+      <p>
+        <ul id="valid">
+          <li class="pink"><span class="glyphicon glyphicon-shopping-cart"></span></li>
+          <li>Over 1000 have bought</li>
+          
+        </ul>
+      </p>
+    </div>
+  </div>
+
+  
+
+  
+
+  <div class="row">
+    <div class="nopadding-left">
+
+      <!-- <div class="row center-block item-listing-box " style="padding-left:18px;">
+          <div class="col-md-4 nopadding-left text-center">
+            <div class="padding5-nobottom minheight">
+              <p class="x-small-text uppercase bold">Discount:</p>
+              <p class="small-text uppercase bold"><%= @product.DiscountPercentage.to_s + "%" %>
+            </div>
+          </div>
+          <div class="col-md-4 nopadding-left text-center" style="padding:0 7px;">
+             <div class="padding5-nobottom minheight">
+              <p class="x-small-text uppercase bold">You save:</p>
+              <span class="x-small-text uppercase"> <%= @product.Currency %></span>
+              <span class="small-text uppercase bold"><%= @savings %></span>
+            </div>
+            
+          </div>
+          <div class="col-md-4 nopadding-left text-center">
+            <div class="padding5-nobottom minheight">
+              <p class="x-small-text uppercase bold">Value:</p>
+              <span class="x-small-text uppercase"> <%= @product.Currency %></span>
+              <span class="small-text uppercase bold"><%= @product.BasePrice %></span>
+          </div>
+
+        </div> -->
+      </div>
+  </div>
+</div>

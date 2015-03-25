@@ -1,0 +1,270 @@
+<% content_for :head do %>
+<script type="text/javascript">
+$(document).on('click', '#fb-invite-friends-to-us', function(e) {
+  console.log("TEST")
+  e.preventDefault();
+  var userIds = $('#collapseOne').find('input:checkbox:checked').map(function() {
+    return parseInt($(this).val(),10);
+  }).get();
+  $.ajax({
+    type: "POST",
+    url: "<%= @add_friends_to_friendlist %>",
+    data: { userid: userIds }
+  })
+    .done(function( msg ) {
+      $.ajax({
+         type: "POST",
+         url: "<%= @invite_people_to_trip %>",
+         data: { userid: userIds, tripid: "<%= @tripid %>" }
+       })
+         .done(function( msg ) {
+           console.log( "Data Saved: " + msg );
+           // FB.ui({method: 'apprequests',
+           //   message: 'Check this app out!',
+           //   to: userIds
+           // });
+         $('.collapse').collapse()
+         });
+    });
+
+  // console.log(userIds)
+});
+jQuery(function($){
+ 
+    //all jQuery code which uses $ needs to be inside here
+  $('#location-date-container input').datepicker(
+  {
+    format: 'dd-mm-yyyy',
+    autoclose : true
+  });
+});
+</script>
+<% end %>
+
+<div class="row listing-section nopadding-left-right">
+    <div class="center-block">
+      <div class="col-md-12 text-center ">
+          <div class="large-text">
+  <%= @username %>'s trips
+  to <span class="brand-wish-color"><%= @feedtitle %></span> 
+</div>
+      </div>
+    </div>
+  </div>
+
+<%= form_tag( '#', 
+              :class=>"form-inline", 
+              method: "post",
+              role:"form",
+              id: "feed-listing-submit"
+              ) do %>
+
+<span id="location-date-container">
+  <div class="form-group">
+    <label for="startdate" class="col-sm-2 control-label">From</label>
+    <div class="col-sm-10 right-inner-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+      <%= text_field_tag 'startdate', @startdate, class:"form-control",:required => true, :disabled => @not_creator  %>
+    </div>
+  </div>
+</span>
+<span id="location-date-container">
+  <div class="form-group">
+    <label for="enddate" class="col-sm-2 control-label">To</label>
+    <div class="col-sm-10 right-inner-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+      <%= text_field_tag 'enddate', @enddate, class:"form-control",:required => true, :disabled => @not_creator  %>
+    </div>
+  </div>
+</span>
+   <%= hidden_field_tag 'data-tripid', @tripid %>
+   <%= submit_tag "Update Dates", class: "btn btn-primary ", id: 'button-change-trip-date', :disabled => @not_creator %>
+<% end %>
+
+<ul class="nav nav-tabs nav-justified">
+  <li class="active"><a href="#deals" data-toggle="tab"><span class="large-text bold uppercase">deals</span></a></li>
+  <li><a href="#shop" data-toggle="tab"><span class="large-text bold uppercase">shop</span></a></li>
+  <li><a href="#souvenir" data-toggle="tab"><span class="large-text bold uppercase">souvenir</span></a></li>
+</ul>
+<div class="padding-top15"></div>
+<!-- Nav tabs -->
+<!-- <ul class="nav nav-tabs">
+  <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+</ul> -->
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="deals">
+    <h2>Purchased</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @deal_products.count < 0 
+      @deal_products.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'box', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% 
+        end 
+      else
+      %>
+      <p class="medium-text">Buy something below!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+    <h2>Available</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @deal_products_available.count < 0 
+      @deal_products_available.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'boxbuy', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end 
+      else
+      %>
+      <p class="medium-text">Deals coming soon!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+  </div>
+  <div class="tab-pane" id="shop">
+    <h2>Purchased</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @shop_products.count < 0 
+      @shop_products.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'box', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end 
+      else
+      %>
+      <p class="medium-text">Buy something below!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+    <h2>Available</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @shop_products_available.count < 0 
+      @shop_products_available.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'boxbuy', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end 
+      else
+      %>
+      <p class="medium-text">Deals coming soon!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+  </div>
+  <div class="tab-pane" id="souvenir">
+    <h2>Purchased</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @souvenier_products.count < 0 
+      @souvenier_products.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'box', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end 
+      else
+      %>
+      <p class="medium-text">Buy something below!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+    <h2>Available</h2>
+    <div id="container" class="clearfix tourisly-background nopadding-left-right">
+      <% 
+      if not @souvenier_products_available.count < 0 
+      @souvenier_products_available.each do |product, a| %>
+      <div class="col-md-4 col">
+        <div class="item-listing-box">
+          <div class="item-listing-container">
+            <div class="row">
+                <%= render partial: 'boxbuy', locals: { product: product} %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end 
+      else
+      %>
+      <p class="medium-text">Deals coming soon!</p>
+      <%
+      end
+      %>
+    </div> <!-- #container -->
+  </div>
+</div>
+<!-- <div id="container" class="transitions-enabled infinite-scroll clearfix"> -->
+
+
+
+<nav id="page-nav">
+  <a href="../pages/2.html"></a>
+</nav>
+
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <img id="product-image" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <!-- <button id="button-danger" type="button" class="btn btn-danger">Share on facebook</button> -->
+        <!-- <div class="fb-like" data-href="http://ec2-54-254-69-170.ap-southeast-1.compute.amazonaws.com:3000/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div> -->
+        <!-- <div id="button-facebook-like" class="fb-like" data-href="http://ec2-54-254-69-170.ap-southeast-1.compute.amazonaws.com:3000/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div> -->
+        <span id="like"></span>
+        <button id="button-want" type="button" class="btn btn-primary"  targeturl="#" >Want on chat</button>
+        <button id="button-shop" type="button" class="btn btn-warning"  targeturl="#" >Shop</button>
+        <!--<%= link_to "Shop", {:controller => "products", :action => "shop"}, :class => "btn btn-warning", :target => '_blank', :id => 'button-shop' %>-->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

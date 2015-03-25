@@ -1,0 +1,29 @@
+<h1>Listing page_feeds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Feedlist</th>
+      <th>Userid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @page_feeds.each do |page_feed| %>
+      <tr>
+        <td><%= page_feed.FeedList %></td>
+        <td><%= page_feed.UserId %></td>
+        <td><%= link_to 'Show', page_feed %></td>
+        <td><%= link_to 'Edit', edit_page_feed_path(page_feed) %></td>
+        <td><%= link_to 'Destroy', page_feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Page feed', new_page_feed_path %>

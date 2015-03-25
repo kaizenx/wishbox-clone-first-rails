@@ -1,0 +1,27 @@
+<h1>Listing preview_sign_ups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Emailaddress</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @preview_sign_ups.each do |preview_sign_up| %>
+      <tr>
+        <td><%= preview_sign_up.EmailAddress %></td>
+        <td><%= link_to 'Show', preview_sign_up %></td>
+        <td><%= link_to 'Edit', edit_preview_sign_up_path(preview_sign_up) %></td>
+        <td><%= link_to 'Destroy', preview_sign_up, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Preview sign up', new_preview_sign_up_path %>

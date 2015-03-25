@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Touristly" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Wishable" %>">
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= content_for?(:head) ? yield(:head) : '' %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-49677007-1', 'touristly.com');
+      ga('send', 'pageview');
+
+    </script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <div id="abc"></div>
+    <% if not current_user.nil? and current_user.admin %>
+    <header>
+      <%= render 'layouts/navigation' %>      
+    </header>
+   <% end %>
+   <div id="wrap">
+      <main role="main">
+      <div class="container">
+      
+
+      <!-- <div class="fb-share-button" data-href="<%= root_path %>" data-type="button_count"></div> -->
+       <%= render 'layouts/messages' %>
+       <%= yield %>
+       </div>
+    </main>
+   </div>
+    
+
+    <div class="footer navbar-fixed-bottom footer-height">
+      
+        <div class="row">
+
+        <div class="col-md-12 text-center whitetext">
+          © 2014 Touristly.com | All Rights Reserved | <a href="mailto:info@touristly.com" class="whitetext">info@touristly.com</a>
+        </div>
+
+      </div>
+    </div>
+    <!--<script type="text/javascript">stLight.options({publisher: "de4d3ec8-ef22-439a-a26b-b4ee9c3591a6", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+    <script>
+    var options={ "publisher": "de4d3ec8-ef22-439a-a26b-b4ee9c3591a6", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "googleplus", "evernote", "linkedin", "pinterest", "email", "sharethis"]}};
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+    </script>-->
+  </body>
+</html>

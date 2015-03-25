@@ -1,0 +1,91 @@
+<%# add navigation links to this file %>
+
+<ul class="nav navbar-nav">
+        <li>
+           
+          <%= 
+            if not current_user.nil? 
+                link_to 'My Trips', {controller: "user_details", action: "trips", id: current_user.id }
+            end 
+          %>
+            
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">More<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/aboutus">About Us</a></li>
+            <li><%= link_to 'Contact Us', '/contact' %></li>
+            <!-- <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li> -->
+          </ul>
+        </li>
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">USD<b class="caret"></b></a>
+          <ul class="dropdown-menu" id="currency-selection">
+            <li><a href="/aboutus">MYR</a></li>
+            <li><a href="/aboutus">SGD</a></li>
+            <!-- <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li> -->
+          </ul>
+        </li>
+        <li>
+          <% if not current_user.nil? %>
+            <a href="/user_shopping_carts/cart"><span class="glyphicon glyphicon-shopping-cart"></a>
+          <% end %>
+        </li>
+       
+     
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
+
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Settings', {:controller => "user_details", :action => "settings", :id => current_user.id } %></li>
+            <li><%=link_to 'Log Out', destroy_user_session_path%></li>
+            
+            <!-- 
+            <li class="divider"></li>
+            
+           
+            -->
+          </ul>
+        </li>
+       
+     
+      
+      </ul>
+<!--
+<li ><%= link_to 'About', page_path('about') %></li>
+<li>
+<%=
+
+	if not current_user.nil?
+	  link_to 'Profile', '/users/edit'
+	end
+%>	
+</li>
+<li>
+	<%=
+	if not current_user.nil?
+		link_to 'Shopping Cart', "/user_shopping_carts/cart"
+	end
+	%>
+</li>
+<li>
+<%=
+	if not current_user.nil?
+	  link_to 'Sign Out', destroy_user_session_path
+	else
+	  link_to 'Sign In', new_user_session_path
+	end
+%>	
+</li>
+-->

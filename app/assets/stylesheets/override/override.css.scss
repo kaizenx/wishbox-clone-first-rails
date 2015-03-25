@@ -1,0 +1,468 @@
+
+$pink: #ED008C;
+
+
+.table-100{
+  width:100%
+}
+@font-face{
+  font-family:"TeX Gyre Adventor, Regular" !important;
+  src: url("/assets/texgyreadventor-regular.otf") format("opentype") !important;
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+  .carousel { display: none; }  /* hide it elsewhere */
+  .hidden-column {
+    display: none !important;
+    width:0px;
+  }
+  
+}
+
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+  .carousel { display: block; }    /* show it on small screens */
+  .hidden-column { display: inline-block; }    /* show it on small screens */
+}
+
+#masonry-container {
+  margin-bottom: 20px;
+  clear: both;
+}
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+html{
+  height: 100% !important;
+}
+body{
+  padding-bottom:50px;
+  background-color:#ececec !important;
+}
+#wrap{
+  background-color:#ececec;
+}
+
+.container{
+	background-color:#ececec;
+  max-width:917px;
+  padding-left:0px !important;
+  padding-right:0px !important;
+  padding-top:50px;
+}
+.whitebg{
+  background-color:#FFF;
+}
+.navbar-default{
+	background-color:#fff;
+}
+.col3 { 
+  position: relative;
+}
+
+.box {
+  margin: 0px;
+  padding: 0px;
+  background: #D8D5D2;
+  background: #FFFFFF;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  
+
+}
+
+.col3 img {
+
+	height:300px;
+}
+
+#map-canvas { 
+	min-height: 295px; 
+}
+
+.xx-large-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size:7em;
+  line-height:100%;
+}
+.x-large-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size:4.9em;
+  line-height:100%;
+}
+.large-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size: 2.8em;
+  line-height:100%;
+}
+.medium-text-plus{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size: 2.52em;
+  line-height:100%;
+}
+.medium-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size: 1.875em;
+  line-height:100%;
+}
+.small-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size: 1.4em;
+  line-height:100%;
+}
+.x-small-text{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  font-size: 0.9em;
+  line-height:100%;
+}
+.oblique{
+  font-style:oblique;
+}
+
+li{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+}
+p{
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+}
+.bold{
+  font-weight:bold;
+}
+
+.strikethrough{
+  text-decoration:line-through;
+}
+.uppercase{
+  text-transform:uppercase;
+}
+.capitalize{
+  text-transform:capitalize;
+}
+.btn-sign-up {
+	margin: 2px 0;
+	border-radius: 0;
+	color : #ffffff;
+	background-color: #ED008C;
+}
+.btn:hover, .submit:hover, .btn:focus, .submit:focus {
+  text-decoration: none; 
+}
+
+a {
+  color: #ffffff; 
+}
+a:visited {
+  color: #ffffff; 
+}
+a:hover {
+  color: #ffffff;
+  background-color: #ffffff; 
+}
+
+
+.myclass {
+	position:relative;
+  float:right;
+  padding-right:10
+}
+.brand{
+  text-transform:uppercase;
+  font:bold 4em  "ITC Avant Garde", "URW Gothic L", "Century Gothic", sans 
+}
+.brand a{
+  text-decoration : none;
+}
+.brand a:hover
+{
+  background:none;
+}
+.brand-wish {
+  font-weight:bold;
+  color: #ED008C;
+  font-size:2em;
+}
+.brand-able {
+  font-weight:bold;
+  color: #333;
+  font-size:2em;
+}
+.brand-wish-color {
+
+  color: #ED008C;
+  
+}
+.brand-able-color {
+
+  color: #333;
+  
+}
+
+
+.home-box .btn-plan-now {
+  position: absolute;
+  top: 0;
+  margin: 40% 18%;
+  font-size: 2.5em;
+  background-color: #ED008C;
+  color: #FFF;
+  border-radius: 0;
+  pointer-events:none;
+}
+
+.btn-lg {
+  font-size:2em;
+}
+
+.btn-primary {
+  background-color: #ED008C;
+  color: #FFF !important;
+  border-radius: 0;
+  border-color: #ED008C;
+  text-transform:uppercase;
+}
+
+.btn-primary:hover{
+  background-color: #D5007E !important;
+  color: #FFF !important;
+  border-radius: 0;
+  border-color: #D5007E;
+  text-transform:uppercase;
+}
+
+.feed-img-overlay{
+  position: absolute;
+  top: 0;
+  margin: 70% 5%;
+  font-size: 2em;
+  pointer-events:none;
+  color: #FFF;
+  border-radius: 0;
+}
+.feed-img-overlay span{
+  display:block;
+  margin-top:1em;
+  
+}
+
+.feed-img-overlay .shadowed{
+  font-weight:bold;
+  text-transform:uppercase;
+  text-shadow: 2px 2px #000000;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  cursor:pointer;
+  pointer-events:none;
+}
+.feed-img-overlay .blur-shadowed{
+
+  text-transform:uppercase;
+  text-shadow: 1px 3px 9px #888888;
+  -webkit-user-select: none; /* Chrome/Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  cursor:pointer;
+  pointer-events:none;
+}
+
+.country{
+  text-transform:uppercase;
+  font:bold 2em  "ITC Avant Garde", "URW Gothic L", "Century Gothic", sans;
+}
+
+.country a{
+  text-decoration : none;
+}
+.country a:hover
+{
+  background:none;
+}
+.country .brand-wish {
+  color: #ED008C;
+}
+.country .brand-able {
+  color: #333;
+}
+.headline{
+  font-size:2em;
+}
+.number-header{
+  text-transform:uppercase;
+  font:bold 2em  "ITC Avant Garde", "URW Gothic L", "Century Gothic", sans ;
+  color: #ED008C;
+}
+.navbar-underline{
+  border-bottom:4px solid;
+}
+.row .top-half{
+  padding-bottom:4em;
+  margin-bottom:4em;
+  border-bottom:2px solid;
+}
+
+.padding10{
+  padding-bottom:4em;
+}
+
+.img_preview{
+  width:100%;
+  height:100%;
+}
+
+.nopadding {
+ padding: 0 !important;
+ margin: 0 !important;
+}
+
+.call-to-action{
+  font-size:3em;
+  text-transform:uppercase;
+  
+}
+
+.pink-call{
+  font-weight:bold;
+  vertical-align:text-top;
+  color: #ED008C;
+
+}
+.subtitle{
+
+  vertical-align:text-top;
+}
+.destination-desc{
+  padding-top:2em;
+  padding-right:5em;
+  font-size:1.2em;
+}
+
+.padding-top{
+  padding-top:2.5em;
+}
+.padding-top15{
+  padding-top:1.5em;
+}
+.padding-top10{
+  padding-top:1.0em;
+}
+.padding-bottom{
+  padding-bottom:2.5em;
+}
+.top-border{
+  border-top:2px solid;
+}
+.nopadding-top{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+.nopadding-left-right{
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+.nopadding-left{
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+
+}
+.nopadding-right{
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+
+}
+.btb-block{
+  display:block;
+  width:100%
+}
+
+.div-check{
+  background-color:red;
+}
+
+.touristly-pink{
+  color: #ED008C;
+}
+
+.row{
+  margin-left: 0 !important;
+  margin-right: 0 !important; 
+}
+
+.text-uppercase{
+  text-transform:capitalize;
+}
+
+.noborder{
+  border:0;
+}
+
+.cockblock{
+  opacity:1.0;
+
+  pointer-events:none;
+
+}
+
+.padding-top-10px{
+  padding-top:10px;
+}
+
+a:hover{
+  color:#ED008C !important;
+  background:none !important;
+  text-decoration: none !important;
+}
+
+.logo-small{
+  max-height:7em;
+  
+}
+
+.logo-container{
+  position:absolute;
+  right:0;
+  bottom:100px;
+}
+.inline-block{
+  display: inline-block;
+}
+
+.right-inner-addon input {
+  padding-right: 30px;    
+}
+.right-inner-addon span {
+  position: absolute;
+  right: 25px;
+  padding: 10px 12px;
+  pointer-events: none;
+}
+.right-inner-addon {
+  position: relative;
+}
+
+.footer-height{
+  height:20px;
+}
+.carousel-img-responsive{
+  display:block;
+  height:90px;
+  width:145px;
+}
+
+.btn-lg2{
+  font-size:1.5em;
+}
+

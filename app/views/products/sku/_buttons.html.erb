@@ -1,0 +1,43 @@
+<div class="col-md-12 nopadding-left-right">
+   <%= 
+   if mode != "preview"
+      link_to 'Add to cart <span class="glyphicon glyphicon-chevron-right"></span>'.html_safe, {:controller => "products", :action => "shop", :id => @product.id}, :remote => true, :class => "btn btn-primary btn-lg2 btn-buy-big btn-block", :target => '_blank', :id => 'button-shop'
+   else
+      link_to "Add to cart", '', :remote => true, :class => "btn btn-primary btn-lg2 btn-buy-big btn-block", :target => '_blank', :id => 'button-shop'
+   end
+  %>
+</div>
+   <!--  <div class="col-md-6" style="left:-10px;">
+      <div class="row">
+        <div class="col-md-6" >
+          <% if mode != "preview" %>
+            <button id="product-share-on-fb"
+                    class="sharebutton" 
+                    data-link='<%= request.original_url %>'
+                    data-picture='<%= @product.ImageURL %>'
+                    data-caption='<%= @product.Title %>'
+                    data-description='<%= @product.Description %>'
+                  />
+            
+          <% else %>
+            <button id="product-share-on-fb" class="sharebutton" ></button>
+          <% end %>
+        </div>
+        <div class="col-md-6" style="left:-13px;">
+          <div class="pull-left">
+            <% if mode != "preview" %>
+              <button id="product-share-on-fb"
+                      class="chatbutton" 
+                      data-link='<%= request.original_url %>'
+                      data-picture='<%= @product.ImageURL %>'
+                      data-caption='<%= @product.Title %>'
+                      data-description='<%= @product.Description %>'
+                    />
+              
+            <% else %>
+              <button id="product-share-on-fb" class="chatbutton" ></button>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div> -->

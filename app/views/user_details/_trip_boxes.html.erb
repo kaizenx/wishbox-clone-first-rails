@@ -1,0 +1,28 @@
+<div class="col-md-6 nopadding-left">
+
+	<div class="row trip-listing nopadding-left">
+		<div class="col-md-6 nopadding-left">
+			<%= image_tag( t[:image], :border => 0 )  %>
+		</div>
+		<div class="col-md-6">
+			<p class="trip-header">
+				trip to <span class="touristly-pink"> <%= t[:title] %></span>
+			</p>
+			<p class="trip-text padding-top10">
+				TRAVEL PERIOD
+			</p>
+			<p class="trip-text">
+				<%= t[:startdate] %> to
+			</p>
+			<p class="trip-text ">
+				<%= t[:enddate] %>
+			</p>
+			
+				
+					<%= link_to 'VIEW', '/itineraries/listing/'+t[:tripid].to_s, :class => "btn btn-primary btn-block" %>
+				
+			
+		</div>
+	</div>
+
+</div><!-- end col -->

@@ -1,0 +1,18 @@
+<%= simple_form_for(@product_in_feed) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <p>
+    	<label>ProductId</label>
+    	<%= f.collection_select :productid, Product.all, :id, :Title, prompt: true  %>
+    </p>
+    <p>
+    	<label>FeedId</label>
+    	<%= f.collection_select :feedid, Feed.all, :id, :Title, prompt: true   %>
+    </p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

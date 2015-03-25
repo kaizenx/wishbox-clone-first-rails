@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feedlist:</strong>
+  <%= @page_feed.FeedList %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @page_feed.UserId %>
+</p>
+
+<%= link_to 'Edit', edit_page_feed_path(@page_feed) %> |
+<%= link_to 'Back', page_feeds_path %>

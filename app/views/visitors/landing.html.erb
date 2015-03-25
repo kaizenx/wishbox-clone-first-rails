@@ -1,0 +1,202 @@
+<% content_for :head do %>
+    <meta property="og:type"   content="website" /> 
+    <meta property="og:url"    content="<%= request.original_url %>" /> 
+    <meta property="og:title"  content="Couplon Monster" /> 
+    <meta property="og:image" content = "<%= @imagelink %>" />
+    <style type="text/css">
+        .container{
+        	background-color:transparent !important;
+        	max-width: 100% !important;
+        	margin: 0 auto;
+        	width: 100%;
+        }
+        main{
+        	background-image: url('/assets/monkey.jpg');
+        	background-repeat: no-repeat;
+          background-position: 0 -50px;
+        	background-size:100% auto;
+        	margin-top:0px;
+        }
+        .carousel-control {
+          padding-top:14%;
+          width:5%;
+        }
+        .carousel-caption{
+        	
+        }
+    </style>
+    <script type="text/javascript">
+    	$(document).ready(function() {
+    		$('#myCarousel').carousel({
+    		interval: 10000
+    		})
+    	    
+    	    $('#myCarousel').on('slid.bs.carousel', function() {
+    	    	//alert("slid");
+    		});
+    	    
+    	    
+    	});
+    		var end = new Date('04/23/2014 10:1 AM');
+
+    	    var _second = 1000;
+    	    var _minute = _second * 60;
+    	    var _hour = _minute * 60;
+    	    var _day = _hour * 24;
+    	    var timer;
+
+    	    function showRemaining() {
+    	        var now = new Date();
+    	        var distance = end - now;
+    	        if (distance < 0) {
+
+    	            clearInterval(timer);
+    	            document.getElementById('countdown').innerHTML = 'EXPIRED!';
+
+    	            return;
+    	        }
+    	        var days = Math.floor(distance / _day);
+    	        var hours = Math.floor((distance % _day) / _hour);
+    	        var minutes = Math.floor((distance % _hour) / _minute);
+    	        var seconds = Math.floor((distance % _minute) / _second);
+
+    	        document.getElementById('countdown').innerHTML = days + ' Days ';
+    	        document.getElementById('countdown').innerHTML += hours + ':';
+    	        document.getElementById('countdown').innerHTML += minutes + ':';
+    	        document.getElementById('countdown').innerHTML += seconds + '';
+    	    }
+
+    	    timer = setInterval(showRemaining, 1000);
+    </script>
+<% end %>
+
+<div class="cover">
+	<div class="inner-cover">
+		<div class="row whitetext">
+			<div class="col-md-4">
+				
+			</div>
+			<div class="col-md-4">
+				
+			</div>
+				<div class="col-md-4 padding-top15 pull-right">
+					<div class="pull-right"><%= image_tag( asset_path('touristly_logo_invertwhite.png'), :border => 0) %></div>
+					<div class="large-text pull-right" style="color:#BFBFBF">local offers for global travellers</div>
+				</div>
+			</div>	
+		<div class="cover whitetext">
+			<div class="row">
+				<div class="col-md-2">
+					
+				</div>
+				<div class="col-md-8 lead">
+					<p class="xx-large-text">Stop monkeying around</p>
+					<div class="x-large-text padding-top-10px">Amazing local offers await on your next holiday</div>	
+					<div class="row padding-top-10px">
+						<div class="col-md-6 nopadding-left">
+							<button class="btn btn-lg btn-primary large-text"  data-toggle="modal" data-target="#EmailSignUpModal">Register Now</button>
+						</div>
+						<div class="col-md-6 col-md-pull-2">
+							<span class="medium-text">Hurry, limited spaces are available!</span>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-md-2">
+					
+				</div>
+				
+				<!--<p>
+					<%=
+						if not current_user.nil?
+						  link_to 'Continue', '/new', :class => "btn btn-primary btn-lg"
+						else
+						  link_to "Facebook Sign in", user_omniauth_authorize_path(:facebook), :class => "btn btn-primary btn-lg"
+						end
+						
+						# link_to 'Sign In', new_user_session_path, :class => "btn btn-lg btn-default"
+						# link_to 'Learn more', '/new', :class => "btn btn-lg btn-default"
+					%>
+				</p>-->
+			</div>
+      <div class="padding-top-large">
+
+      </div>
+			<div class="row transparent2 nopadding-left-right bigger">
+				<div class="col-md-12 nopadding-left">
+					<div class="row">
+						<div class="col-md-5 padding-top-10px">
+							<span class="large-text">First Destination:</span><span class="large-text brand-wish-color">&nbsp; &nbsp;KUALA LUMPUR</span>
+							<div class="row padding-top15 ">
+								<p class="medium-text">Discover Malaysia’s capital city like you’ve never seen it </p>
+								<p class="medium-text">before. The best experiences are just a click away!</p>
+							</div>
+							<div class="row">
+
+								<div class="col-md-6 nopadding-left padding-top-10px">
+									<p ><div id="countdown" class="medium-text brand-wish-color"></div></p>
+									<p class="medium-text">To book your places</p>
+								</div>
+								<div class="col-md-6 col-md-pull-1 padding-top-10px">
+									<button class="btn btn-lg btn-primary large-text"  data-toggle="modal" data-target="#EmailSignUpModal">Register Now</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-7">
+				            <div class="padding-top15">
+				            	<%= render 'carousel' %> 
+
+				            </div>
+				                <div class="padding-top15"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div id="EmailSignUpModal" class="modal fade square-edges autoModal">
+  <div class="modal-dialog modal-dialog-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+		<%= form_tag({controller: "visitors", action: "landingsignup" },id:"preview-form",class: "nopadding-left",  method: "post", role:"form", remote: true) do %>
+		<div class="form-group nopadding-left">
+          <label for="EmailSignUp">Email address</label>
+           <%= text_field_tag 'EmailSignUp', nil, :type => "email", :class=>"form-control", :required => true , :placeholder=>"Enter email" %>
+        </div>
+        <button id="preview-signup" type="submit" class="btn btn-primary">Sign up</button> 
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div id="SubmitEmailSignUp" class="modal fade square-edges autoModal">
+  <div class="modal-dialog modal-dialog-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">CONGRATULATIONS</h4>
+      </div>
+      <div class="modal-body">
+        <p class="medium-text">You’ve successfully pre-registered for your Touristly account. Stay tuned for exciting travel offers coming your way!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+

@@ -1,0 +1,83 @@
+<p id="notice"><%= notice %></p>
+<p> PREVIEW LINK
+  <%=
+    root_url.to_s + "products/preview/" + @product.slug
+  %>
+
+</p>
+
+<p>
+  
+  <strong>ImageUrl:</strong>
+  <%= image_tag @product.ImageURL %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%= @product.Title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @product.SubTitle %>
+</p>
+
+
+
+<p>
+  <strong>Targeturl:</strong>
+  <%= @product.TargetURL %>
+</p>
+
+<p>
+  <strong>Wants:</strong>
+  <%= @product.Wants %>
+</p>
+
+<p>
+  <strong>Createdbyuserid:</strong>
+  <%= @product.CreatedByUserId %>
+</p>
+
+
+
+<p>
+  <strong>Currency:</strong>
+  <%= @product.Currency %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.Price %>
+</p>
+<p>
+  <strong>Is Published:</strong>
+  <%= @product.IsPublished %>
+</p>
+<p>
+  <strong>MerchantId:</strong>
+  <%= @product.MerchantId %>
+</p>
+<p>
+  <strong>SKUId:</strong>
+  <%= @product.SKUId %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= @product.Category %>
+</p>
+
+<p>
+  <strong>StartDate:</strong>
+  <%= @product.StartDate %>
+</p>
+<p>
+  <strong>EndDate:</strong>
+  <%= @product.EndDate %>
+</p>
+<p>
+  <strong>DestinationId:</strong>
+  <%= @product.DestinationId %>
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

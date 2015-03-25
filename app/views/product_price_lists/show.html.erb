@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product_price_list.Price %>
+</p>
+
+<p>
+  <strong>Dayofyear:</strong>
+  <%= @product_price_list.DayOfYear %>
+</p>
+
+<%= link_to 'Edit', edit_product_price_list_path(@product_price_list) %> |
+<%= link_to 'Back', product_price_lists_path %>

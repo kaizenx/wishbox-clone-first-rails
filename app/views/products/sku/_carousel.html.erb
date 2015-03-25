@@ -1,0 +1,23 @@
+<%
+size = @images_from_gallery.count - 1
+if @images_from_gallery.count > 0
+  @count = 0
+  @images_from_gallery.each do |e|
+    if @count == 0
+        %>
+            <li data-target="#carousel-touristly-pictures" data-slide-to="<%= @count %>" class="active">
+              
+            </li>
+        <%
+    else
+        %>
+            <li data-target="#carousel-touristly-pictures" data-slide-to="<%= @count %>">
+              
+            </li>
+        <%
+    end
+    @count = @count + 1
+  end
+end
+%>
+    

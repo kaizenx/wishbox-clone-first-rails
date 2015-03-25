@@ -1,0 +1,43 @@
+<div class="media outline cart-item">
+    <%=
+      link_to image_tag( t[:image], :border => 0, :class=>"shopping-cart-img"), {:controller => "products", :action => "item", :id => t[:productid] }, :class => "pull-left padding-img-padding"
+    %>
+  <div class="media-body padding-img-padding">
+    <div class="row">
+      <div class="col-md-11 col">
+        <p class="media-heading small-text"><%= t[:Title] %></p>
+      </div>
+      <div class="col-md-1 col" style="text-align:right">
+        <a href='<%= "/user_shopping_carts/remove/"+t[:id].to_s %>' onclick="return confirm('Are you sure?')" >
+            <span class="glyphicon glyphicon-remove"></span>
+          </a>
+      </div>
+      
+    </div>
+    <div class="row form-height">
+      <ul id="display-inline-block-example">
+        <li class="hidden-column">
+          Going to  <%= t[:FeedTitle] %>
+          From <%= t[:TripStart] %>
+          To <%= t[:TripEnd] %>
+        </li>
+        <li class="quantity-column">
+          <div class="form-elements">
+            Quantity 
+            <%=
+            # select_tag "Quantity", "<option>1</option><option>2</option><option>3</option><option>4</option>".html_safe
+            # select_tag "page_type", options_for_select(1..10, t[:Quantity]), {:class =>"select_combobox",:onchange=>"reset_form(this.id,'page_type_msg');"} 
+            select_tag "Quantity", options_for_select(1..10, t[:Quantity]), {:class =>"green-select",:onchange=>"change_quantity(this.value,'"+t[:id].to_s+"');"} 
+            %>
+          </div>
+        </li>
+        <li class="price-column form-elements">
+          <div class="btn btn-primary cart-item-price ">$
+            <%= number_with_precision(t[:Price], :precision => 2) %>
+          </div>
+        </li>
+      </ul>
+      
+    </div>
+  </div>
+</div>

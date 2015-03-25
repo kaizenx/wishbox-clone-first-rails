@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  
+  <strong>ImageUrl:</strong>
+  <%= image_tag @feed.ImageUrl %>
+</p>
+
+<p>
+  <strong>Userid:</strong>
+  <%= @feed.UserId %>
+</p>
+
+<p>
+  <strong>Isadmin:</strong>
+  <%= @feed.IsAdmin %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @feed.Title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @feed.Subtitle %>
+</p>
+
+
+
+
+<p>
+  <strong>Issponsor:</strong>
+  <%= @feed.IsSponsor %>
+</p>
+
+<p>
+  <strong>Restricted:</strong>
+  <%= @feed.restricted %>
+</p>
+
+<%= link_to 'Edit', edit_feed_path(@feed) %> |
+<%= link_to 'Back', feeds_path %>

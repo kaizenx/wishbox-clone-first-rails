@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ProductList: MyString
+  UserId: MyString
+  IsAdmin: false
+  IsSponsor: false
+
+two:
+  ProductList: MyString
+  UserId: MyString
+  IsAdmin: false
+  IsSponsor: false

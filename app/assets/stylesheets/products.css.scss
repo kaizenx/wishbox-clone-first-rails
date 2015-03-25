@@ -1,0 +1,241 @@
+// Place all the styles related to the Products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+$pink: #ED008C;
+
+.body-text { 
+  font-family:"ITC Avant Garde", "TeX Gyre Adventor, Regular", "URW Gothic L", "Century Gothic", sans !important;
+  display: inline-block;
+  border:none;
+  line-height:100%;
+  background:none !important;
+  padding:0px;
+  white-space: pre-wrap; /* CSS3 */
+  white-space: -moz-pre-wrap; /* Mozilla, post millennium */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+  overflow-y: hidden !important; 
+  width:410px;
+  min-height:800px;
+  max-height:1000px;
+  resize:none;
+}
+
+.item-listing-box{
+  outline:#C8C8CA solid thin;
+  
+}
+.item-listing-box-inline{
+	outline:#C8C8CA solid thin;
+	display:inline-block;
+	padding:5px 5px;	
+
+}
+.padding5{
+
+	padding:5px 5px;	
+
+}
+.padding5-nobottom{
+
+  padding-top:12px;
+
+}
+.minheight{
+	min-height:50px;
+}
+
+.item-image{
+	width:620px;
+	height:348.75px !important;
+}
+
+// .carousel-indicators li {
+//   display: inline-block;
+//   width: 77.5px;
+//   height: 43.59px;
+//   margin: 1px;
+//   text-indent: -999px;
+//   border: 0px solid white;
+  
+//   cursor: pointer;
+//   background-color: #000 \9;
+//   background-color: rgba(0, 0, 0, 0); 
+// }
+
+// .carousel-indicators li img{
+//   width: 77.5px;
+//   height: 43.59px;
+  
+// }
+
+
+// .carousel-indicators .active {
+//   margin: 1;
+//   width: 77.5px;
+//   height: 43.59px;
+//   background-color: #FFF;
+// }
+
+// .carousel-indicators {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 50%;
+//   z-index: 15;
+//   width: 60%;
+//   margin-left: -30%;
+//   padding-left: 0;
+//   padding-top:3px;
+//   list-style: none;
+//   text-align: center;
+//   background:rgba(0, 0, 0, 0.65);
+// }
+
+.padding8{
+	padding:20px 20px;
+}
+
+.sharebutton{
+  background:url('share.png') no-repeat;
+  cursor:pointer;
+  border:none;
+  width:43px;
+  height:43px;
+  background-size: 43px 43px;
+}
+.chatbutton{
+  background:url('chat.png') no-repeat;
+  cursor:pointer;
+  border:none;
+  width:43px;
+  height:43px;
+  background-size: 43px 43px;
+}
+.carousel-control {
+  padding-top:5%;
+  width:5%;
+}
+.widget{
+  width:200px;
+}
+.product-map-segment-border{
+  border-right: 2px dotted #ddd;
+  height:306px;
+}
+.padding-left8{
+  padding-left:30px;
+}
+
+.highlights-list ul {
+  list-style: disc outside none; 
+  margin-left: 5; 
+  padding-left: 2em;
+}
+.highlights-list ul li {
+  padding-left: -1em;
+  font-size:0.8em;
+}
+
+.left-panel{
+  min-height:348px;
+}
+
+#purchase-cluster{
+  .blurb{
+    margin-bottom: 20px;
+  }
+  .add-to-cart{
+    margin-bottom: 20px;
+  }
+  .deal-discount{
+    margin:0 0 20px;
+  }
+
+  .price{
+    margin-bottom:20px;
+  }
+  table {
+    margin: 0;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    th {
+      color: #888;
+      font-size: 11px;
+      font-weight: 400;
+      line-height: 18px;
+      margin-bottom: 5px;
+      padding: 0 0 5px;
+      text-transform: uppercase;
+    }
+    td {
+      font-size: 17px;
+      line-height: 18px;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: top;
+    }
+  }
+
+  #discount-value, #discount-percent, #discount-you-save{
+    text-transform: uppercase;
+  }
+
+  .buy{
+    margin-bottom: 20px;
+  }
+  .price {
+    margin-bottom: 10px;
+  }
+
+  .valid{
+    margin-bottom: 20px;
+    font-size:11px;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
+  .available{
+    
+  }
+  
+  ul#valid{
+    width:100%;
+    color:$pink;
+    font-size:18px;
+  }
+  ul#valid,
+  ul#valid li {
+    /* Setting a common base */
+    margin: 0;
+    padding: 0;
+  }
+
+  ul#valid li {
+    display: inline-block;
+    vertical-align: bottom;
+  }
+  .is-countdown{
+    background: none;
+    border:none;
+  }
+}
+
+.btn-buy-big {
+    width: 100%;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 18px;
+    position: relative;
+    color: #fff;
+    outline: 0;
+    border: 0;
+    padding: 24px 0;
+  }
+
+.section{
+  margin-bottom:80px;
+
+
+}

@@ -1,0 +1,110 @@
+<%= tinymce_assets %>
+<%= tinymce %>
+<%= simple_form_for(@product) do |f| %>
+<%= f.error_notification %>
+<script type="text/javascript">
+jQuery(function($){
+    //all jQuery code which uses $ needs to be inside here
+    $('#date-container input').datepicker(
+      {
+        format: 'dd-mm-yyyy',
+        autoclose : true
+      });
+});
+
+</script>
+  <div class="form-inputs">
+    <p>
+  
+  <strong>ImageUrl:</strong>
+  <%= image_tag f.object.ImageURL %>
+</p>
+    <%= f.input :Title %>
+    <%= f.input :slug %>
+    <%= f.input :SubTitle, :input_html => {:maxlength => 15, :size => 40}  %>
+    <%= f.collection_select :ImageURL, Gallery.all, :image_url, :name %>
+    <!--<%= f.select( :ImageURL, Gallery.where(productid: f.object.id).collect {|p| [ p.name, p.image_url ] }, prompt:true ) %>-->
+    <%= f.input :TargetURL %>
+    
+    <%= f.input :Wants %>
+    <%= f.label :CreatedByUserId %>
+    <div>
+      <%= f.collection_select(:CreatedByUserId, User.where(admin:true), :id, :email, prompt:true ) %>
+    </div>
+    <%= f.label :Currency %>
+    <div>
+      <%= f.select(:Currency, Money::Currency.table,  :class => "styled" ) %>
+    </div>
+    <%= f.input :Price %>
+    <%= f.input :BasePrice %>
+    <%= f.input :DiscountPercentage %>
+    <%= f.input :IsPublished %>
+    <%= f.label :MerchantId %>
+    <div>
+      <%= f.collection_select(:MerchantId, Merchant.all, :id, :Name, prompt:true ) %>
+    </div>
+    <%= f.input :SKUId %>
+    <%= f.label :Category %>
+    <div>
+      <%= f.collection_select(:Category, Category.all, :id, :Name, prompt:true ) %>
+    </div>
+    <%= f.input :IsInfinite %>
+
+    <%= f.label :StartDate %>
+    <div id="date-container">
+      <%= f.text_field :StartDate %>
+    </div>
+    <%= f.label :EndDate %>
+    <div id="date-container">
+      <%= f.text_field :EndDate %>
+    </div>
+
+    <%= f.label :ValidityStart %>
+    <div id="date-container">
+      <%= f.text_field :ValidityStart %>
+    </div>
+    <%= f.label :ValidityEnd %>
+    <div id="date-container">
+      <%= f.text_field :ValidityEnd %>
+    </div>
+      
+    <%= f.label :DestinationId %>
+    <div>
+      <%= f.collection_select(:DestinationId, Destination.all, :id, :Name, prompt:true ) %>
+    </div>
+    <%= f.label :Blurb %>
+    <div>
+    <%= f.text_area :Blurb, size: '50x10', maxlength: 140 %>
+    <div>
+        <%= f.label :Description %>
+    </div>
+    <div>
+    <%= f.text_area :Description, size: '50x10' %>
+    </div>
+    <%= f.label :Highlights %>
+    <div>
+    <%= f.text_area :Highlights, size: '50x10' %>
+    </div>
+    <%= f.label :Condition %>
+    <div>
+    <%= f.text_area :Condition, size: '50x10' %>
+    </div>
+    <%= f.input :LocationName %>
+    <%= f.label :Address %>
+    <div>
+    <%= f.text_area :Address, size: '50x10', class: 'tinymce' %>
+    </div>
+    <%= f.label :Widget1 %>
+    <div>
+    <%= f.text_area :Widget1, size: '50x10' %>
+    </div>
+    <%= f.label :Widget2 %>
+    <div>
+    <%= f.text_area :Widget2, size: '50x10' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

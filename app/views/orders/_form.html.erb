@@ -1,0 +1,14 @@
+<%= simple_form_for(@order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :UserId %>
+    <%= f.input :PaymentId %>
+    <%= f.input :PaymentPortal %>
+    <%= f.input :Amount %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

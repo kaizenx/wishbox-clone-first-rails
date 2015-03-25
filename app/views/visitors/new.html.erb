@@ -1,0 +1,34 @@
+<!-- THIS IS THE LANDING PAGE -->
+<% content_for :head do %>
+    <script type="text/javascript">
+      jQuery(function($){
+        //   //all jQuery code which uses $ needs to be inside here
+        // $('.button-container').hover(function() {
+        //   // $( this ).show();
+        //   // console.log($( this ).children('.button-container'))
+        //   $( this ).children('.button-container').show();
+        // });
+      });
+    </script>
+<% end %>
+<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
+<% @default_feed.each do |t, a| %>
+<div class="box col3 home-box">
+  <%=
+  link_to image_tag( t.ImageUrl, :border => 0 ), "/location/"+t.id.to_s
+  %>
+  <div class="button-container">
+      <button class="btn btn-plan-now">PLAN NOW!</button>
+  </div>
+  <div class="feed-img-overlay">
+    <span class="shadowed"><%= t.Title %></span>
+    <span class="blur-shadowed"><%= t.Subtitle %></span>
+  </div>
+</div>
+<% end %>
+</div> <!-- #container -->
+
+<nav id="page-nav">
+  <a href="../pages/2.html"></a>
+</nav>
+
